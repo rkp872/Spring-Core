@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.1.xsd
+            http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util-3.1.xsd
+           ">
+          <util:list id="phone">
+          	<value>9123114708</value>
+          	<value>7667187559</value>
+          	<value>8617479410</value>
+          	<value>9693112026</value>
+          </util:list>
+           
+        <bean class="com.DI.Publisher" name="publisher">
+        	<property name="pid" value="101"/>
+        	<property name="pname" value="Ganga Press"/>
+        	<property name="pcity" value="Ranchi"/>
+        	<property name="phone" ref="phone"></property>
+        </bean>   
+           
+     <bean class="com.DI.Book" name="book">
+     	<property name="isbn" value="2354"/>
+     	<property name="bookTitle" value="Java"/>
+     	<property name="price" value="1200"/>
+     	<property name="authors">
+     		<list>
+     			<value>Durga Sir</value>
+     			<value>Navin Reddy</value>
+     			<value>Saurabh Shukla</value>
+     		</list>
+     	</property>
+     	<property name="publisher" ref="publisher"/>
+     </bean>      
+           
+           
+</beans>
